@@ -1,5 +1,10 @@
 {
   "name": "@dwete/biome",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "exports": {
+    "./base": "./base.json",
+    "./next-js": "./next.json",
+    "./react-internal": "./react-internal.json"
+  }
 }

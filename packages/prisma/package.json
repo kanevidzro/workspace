@@ -1,0 +1,27 @@
+{
+  "name": "@dwete/db",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/client.ts"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "latest",
+    "@prisma/client": "latest",
+    "dotenv": "latest",
+    "pg": "latest"
+  },
+  "devDependencies": {
+    "@dwete/biome": "workspace:*",
+    "@types/node": "latest",
+    "@types/pg": "latest",
+    "prisma": "latest",
+    "typescript": "latest"
+  }
+}

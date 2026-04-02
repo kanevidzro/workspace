@@ -1,5 +1,17 @@
 {
   "name": "@dwete/api",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@dwete/auth": "workspace:*",
+    "@dwete/db": "workspace:*",
+    "@trpc/server": "latest",
+    "superjson": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@dwete/biome": "workspace:*",
+    "@types/node": "latest",
+    "typescript": "latest"
+  }
 }
