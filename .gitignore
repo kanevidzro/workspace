@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+
+# Bun
+.bun
+
+# Build outputs
+dist
+build
+.next
+.turbo
+coverage
+
+# Expo / React Native
+.expo
+.expo-shared
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+.vscode
+.idea
