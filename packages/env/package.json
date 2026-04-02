@@ -1,0 +1,12 @@
+{
+  "name": "@dwete/env",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "latest",
+    "zod": "latest"
+  }
+}
