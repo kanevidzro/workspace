@@ -1,0 +1,47 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check",
+    "format": "biome format --write"
+  },
+  "dependencies": {
+    "@dwete/api": "workspace:*",
+    "@dwete/auth": "workspace:*",
+    "@dwete/db": "workspace:*",
+    "@dwete/env": "workspace:*",
+    "@dwete/ui": "workspace:*",
+    "@tanstack/react-query": "latest",
+    "@trpc/client": "latest",
+    "@trpc/server": "latest",
+    "@trpc/react-query": "latest",
+    "@trpc/tanstack-react-query": "latest",
+    "better-auth": "latest",
+    "next": "16.2.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "superjson": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@dwete/biome": "workspace:*",
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
+}
