@@ -1,14 +1,7 @@
-import { useState } from "react";
-import {
-  TextInput,
-  Button,
-  ScrollView,
-  Text,
-  StyleSheet,
-  Alert,
-} from "react-native";
-import { authClient } from "@/auth/client";
 import { Link } from "expo-router";
+import { useState } from "react";
+import { Alert, Button, ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import { authClient } from "@/auth/client";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -27,9 +20,7 @@ export default function SignIn() {
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <Text style={{ fontSize: 32, fontWeight: "bold", margin: 10 }}>
-        Sign In
-      </Text>
+      <Text style={{ fontSize: 32, fontWeight: "bold", margin: 10 }}>Sign In</Text>
       <TextInput
         placeholder="Email"
         value={email}

@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  TextInput,
-  Button,
-  ScrollView,
-  Text,
-  StyleSheet,
-  Alert,
-} from "react-native";
+import { Alert, Button, ScrollView, StyleSheet, Text, TextInput } from "react-native";
 import { authClient } from "@/auth/client";
 
 export default function SignUp() {
@@ -28,15 +21,8 @@ export default function SignUp() {
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <Text style={{ fontSize: 32, fontWeight: "bold", margin: 10 }}>
-        Sign Up
-      </Text>
-      <TextInput
-        placeholder="Name"
-        value={name}
-        onChangeText={setName}
-        style={styles.input}
-      />
+      <Text style={{ fontSize: 32, fontWeight: "bold", margin: 10 }}>Sign Up</Text>
+      <TextInput placeholder="Name" value={name} onChangeText={setName} style={styles.input} />
       <TextInput
         placeholder="Email"
         value={email}
