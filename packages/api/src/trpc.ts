@@ -10,8 +10,15 @@ import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { z, ZodError } from "zod";
 
-import type { Auth } from "@dwete/auth";
 import { db } from "@dwete/db";
+
+type SessionLike = { user: unknown } | null;
+
+type AuthLike = {
+  api: {
+    getSession: (opts: { headers: Headers }) => Promise<SessionLike>;
+  };
+};
 
 /**
  * 1. CONTEXT
@@ -28,7 +35,7 @@ import { db } from "@dwete/db";
 
 export const createTRPCContext = async (opts: {
   headers: Headers;
-  auth: Auth;
+  auth: AuthLike;
 }) => {
   const authApi = opts.auth.api;
   const session = await authApi.getSession({

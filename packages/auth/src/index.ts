@@ -1,12 +1,10 @@
-import type { BetterAuthOptions, BetterAuthPlugin } from "better-auth";
 import { expo } from "@better-auth/expo";
+import { prisma } from "@dwete/db";
+import type { BetterAuthOptions, BetterAuthPlugin } from "better-auth";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { prisma } from "@dwete/db";
 
-export function initAuth<
-  TExtraPlugins extends BetterAuthPlugin[] = [],
->(options: {
+export function initAuth<TExtraPlugins extends BetterAuthPlugin[] = []>(options: {
   baseUrl: string;
   secret: string | undefined;
   extraPlugins?: TExtraPlugins;
