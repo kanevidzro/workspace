@@ -6,11 +6,16 @@
  * tl;dr - this is where all the tRPC server stuff is created and plugged in.
  * The pieces you will need to use are documented accordingly near the end
  */
+import { db } from "@dwete/db";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { z, ZodError } from "zod";
-import type { Auth } from "@dwete/auth";
-import { db } from "@dwete/db";
+
+interface AuthLike {
+  api: {
+    getSession: (opts: { headers: Headers }) => Promise<unknown>;
+  };
+}
 
 /**
  * 1. CONTEXT
@@ -27,12 +32,13 @@ import { db } from "@dwete/db";
 
 export const createTRPCContext = async (opts: {
   headers: Headers;
-  auth: Auth;
+  auth: AuthLike;
 }) => {
   const authApi = opts.auth.api;
   const session = await authApi.getSession({
     headers: opts.headers,
   });
+
   return {
     authApi,
     session,
@@ -115,13 +121,20 @@ export const publicProcedure = t.procedure.use(timingMiddleware);
 export const protectedProcedure = t.procedure
   .use(timingMiddleware)
   .use(({ ctx, next }) => {
-    if (!ctx.session?.user) {
+    const session = ctx.session as
+      | {
+          user?: unknown;
+        }
+      | null
+      | undefined;
+
+    if (!session?.user) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
+
     return next({
       ctx: {
-        // infers the `session` as non-nullable
-        session: { ...ctx.session, user: ctx.session.user },
+        session,
       },
     });
   });

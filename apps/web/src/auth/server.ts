@@ -15,8 +15,7 @@ const baseUrl =
 
 export const auth = initAuth({
   baseUrl,
-  productionUrl: `https://${env.VERCEL_PROJECT_PRODUCTION_URL ?? "dwete.vercel.app"}`,
-  secret: env.AUTH_SECRET,
+  secret: env.AUTH_SECRET ?? env.BETTER_AUTH_SECRET,
   extraPlugins: [nextCookies()],
 });
 
