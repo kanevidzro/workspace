@@ -53,6 +53,6 @@
     "@dwete/env": "workspace:*",
     "@types/react": "~19.2.0",
     "tailwindcss": "latest",
-    "typescript": "~5.9.2"
+    "typescript": "~6.0.0"
   }
 }
