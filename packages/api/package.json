@@ -2,6 +2,9 @@
   "name": "@dwete/api",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "dependencies": {
     "@dwete/auth": "workspace:*",
     "@dwete/db": "workspace:*",
