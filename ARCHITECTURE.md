@@ -36,6 +36,8 @@ This project is a high-performance, full-stack monorepo managed by **Turborepo**
 
 ### `packages/` — Shared Modules
 
+- **`core/`**: Business logic and domain use-cases.
+  - Keeps product rules independent from transport layers.
 - **`api/`**: tRPC routers, procedures, and schema contracts.
   - Defines the typed boundary between clients and server logic.
 - **`auth/`**: Central Better-Auth configuration and adapters.
