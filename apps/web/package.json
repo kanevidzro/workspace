@@ -22,8 +22,8 @@
     "@trpc/tanstack-react-query": "latest",
     "better-auth": "latest",
     "next": "16.2.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "superjson": "latest",
     "zod": "latest"
   },
